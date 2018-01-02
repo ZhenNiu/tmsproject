@@ -1,0 +1,48 @@
+package com.h3c.imc.entity;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * 
+ * @author 71071
+ * 系统信息实体
+ * 
+ *
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "sys")
+public class SysInfoEntity {
+
+	private String sysName;
+	
+	private String userLable;
+	
+	private String version;
+
+	public String getSysName() {
+		return sysName;
+	}
+
+	public void setSysName(String sysName) {
+		this.sysName = sysName;
+	}
+
+	public String getUserLable() {
+		return userLable;
+	}
+
+	public void setUserLable(String userLable) {
+		this.userLable = userLable;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	
+}

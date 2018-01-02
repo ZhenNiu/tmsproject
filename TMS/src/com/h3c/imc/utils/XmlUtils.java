@@ -1,0 +1,24 @@
+package com.h3c.imc.utils;
+
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.XMLConfiguration;
+
+public class XmlUtils {
+	
+	public static Configuration config = null;
+	
+	static {
+		try {
+			config = new XMLConfiguration("conf.xml");
+		} catch (ConfigurationException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static String getNodeText(String nodeName){
+		String string = config.getString(nodeName);
+		return string;
+	}
+
+}

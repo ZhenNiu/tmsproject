@@ -1,0 +1,50 @@
+package com.h3c.imc.rs;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.h3c.imc.entity.SysInfoEntity;
+import com.h3c.imc.resouce.ConfigureResource;
+
+/**
+ * 
+ * @author 71071
+ * @version jre1.8,tomcat v7.0
+ * 2017.4.12
+ *	提供配置信息的接口包括:
+ *	1.系统信息，2.设备信息，3.设备机框信息
+ *	4.设备槽位信息，5.设备板卡信息，6.设备端口信息
+ *	7.逻辑块与物理口关系，8.设备端口与ip关系
+ *	9.设备间拓扑关系，10.VRF信息，11.VLAN信息
+ *	12.配置文件信息
+ *	
+ */
+@Path("/configureinfo")
+@Consumes(MediaType.APPLICATION_XML)
+@Produces(MediaType.APPLICATION_XML)
+public class ConfigureInfo {
+	
+	private Log runLog = LogFactory.getLog(ConfigureInfo.class);
+	private ConfigureResource configureResource;
+	
+	/**
+	 * 系统信息
+	 * @return
+	 */
+	@GET()
+	@Path("sysinfo")
+	public Response getSysInfo(){
+		//调用imc接口去获取数据
+		
+		SysInfoEntity sysInfo = configureResource.getSysInfo();
+		return Response.ok(sysInfo).build();
+	}
+	
+}

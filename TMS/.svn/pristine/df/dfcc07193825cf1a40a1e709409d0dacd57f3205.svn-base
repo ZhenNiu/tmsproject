@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conf>
+	<IMCIp>192.168.127.210</IMCIp>
+	<!-- imc 端口 -->
+	<IMCPort>8080</IMCPort>
+	<!-- imc 管理员用户名 -->
+	<IMCUserName>admin</IMCUserName>
+	<!-- imc 管理员密码 -->
+	<IMCPassword>admin</IMCPassword>
+	<!-- 在线数量限制 -->
+	<onlineLimit>3</onlineLimit>
+	
+	<!-- 密钥 -->
+<!-- 	<ShareKey>imc-port</ShareKey> -->
+	<!-- 成功跳转地址,此地址为pc,手机验证成功后的跳转地址 -->
+	<SuccessUrl>http://www.nbmetro.com</SuccessUrl>
+	<!-- imc服务名称 -->
+	<imcservice>staff_service</imcservice>
+	<!-- 用户ws rootId -->
+	<rootId>4</rootId>
+	
+	<!-- 单点的秘钥 -->
+	<key>ramskey1</key>
+	
+	<!-- 单点的ip -->
+	<portalAuthServerIp>172.16.250.11</portalAuthServerIp>
+		<!-- 单点的端口 -->
+	<portalAuthPort>8080</portalAuthPort>
+	
+	<!-- 短信内容 -->
+	<content>验证码为:${captcha}</content>
+	
+	
+	<!-- rams配置信息 -->
+	<appCode>WIFI</appCode>
+	<authCode>1a04dbb3-f644-4fec-9947-cec633c9d3cb</authCode>
+	<ip>172.16.240.6</ip>
+	
+	<!-- ramswebservice配置文  -->
+	<wsUrl>http://esb.nbmetro.com/esbserverproject/services/ramsEsbWebService</wsUrl>
+	
+	
+<!-- 短信配置 -->
+	<!-- 短信发送地址 -->
+	<smsurl>http://172.16.250.43:9080/OpenMasService</smsurl>
+	<!-- 短信模板 -->
+	<smsextendCode>14</smsextendCode>
+	<!-- 账号 -->
+	<smsApplicationID>WIFI</smsApplicationID>
+	<!-- 密码 -->
+	<smsPassword>Ylwyzd3i|po5</smsPassword>
+	
+</Conf>

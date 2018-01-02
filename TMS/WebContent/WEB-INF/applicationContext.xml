@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+ 	default-autowire="byName" default-lazy-init="true">
+	<description>spring框架的配置文件，定义并初始化数据库，声明式事务管理和被spring所管理的bean(如果需要)。</description>
+	<!-- JDBC数据源 -->
+	
+	<!--  声明事务管理-->
+	
+	<!--spring所管理的bean -->
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	<bean id="configureResource" class="com.h3c.imc.resouce.ConfigureResourceImpl"></bean>
+	<bean id="configureServer" class="com.h3c.imc.server.ConfigureServerImpl"></bean>
+	<bean id="configureInfo" class="com.h3c.imc.rs.ConfigureInfo">
+	 	<property name="testOne" value="123456"></property>
+	</bean> 
+		<!-- <property name="configureResource" ref="configureResource"></property>
+		<property name="testOne" value="123456"></property> -->
+	
+	<!--配置扫描路径  -->
+	<context:component-scan base-package="com.h3c.imc.resouce">
+	<!-- 把Controller排除在外，Controller由springmvc加载 -->
+		<context:exclude-filter type="annotation" 
+		expression="org.springframework.stereotype.Controller"/>
+		
+	</context:component-scan>
+	
+</beans>
